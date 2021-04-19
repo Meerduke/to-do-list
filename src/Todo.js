@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Todo ({text, todo, setTodo}){
+export default function Todo ({text, todo, todos, setTodos}){
 
+    function deleteHandler(){
+        setTodos(todos.filter((el) => el.id !== todo.id));
+    };
 
     return(
         <div className="todo">
@@ -11,7 +14,7 @@ export default function Todo ({text, todo, setTodo}){
             <button className="complete-btn">
                 <i className="fas fa-check-square"></i>
             </button>
-            <button className="trash-btn">
+            <button onClick={deleteHandler} className="trash-btn">
                 <i className="fas fa-trash-alt"></i>
             </button>
         </div>

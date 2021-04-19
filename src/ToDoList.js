@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo';
 
-export default function ToDoList({todo, setTodo}){
+export default function ToDoList({todos, setTodos}){
     return(
         <div className = "ToDoList">
             <h2>
@@ -9,8 +9,8 @@ export default function ToDoList({todo, setTodo}){
             </h2>
             <div className="todo-container">
                 <ul className="todo-list">
-                {todo.map((todo) => (
-                    <Todo todo={todo} setTodo={setTodo} key={todo.id} text={todo.text} />
+                {todos.map((todo) => (
+                    <Todo todo={todo} todos={todos} setTodos={setTodos} key={todo.id} text={todo.text} />
                 ))}
                 </ul>
             </div>

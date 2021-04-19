@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form({inputText, setInputText, todo, setTodo}){
+export default function Form({inputText, setInputText, todos, setTodos}){
 
     function inputTextHandler(event){
         setInputText(event.target.value);
@@ -8,7 +8,7 @@ export default function Form({inputText, setInputText, todo, setTodo}){
 
     function submitTodoHandler(event){
         event.preventDefault();
-        setTodo([...todo, {text: inputText, completed: false, id: Math.random() * 1000}]);
+        setTodos([...todos, {text: inputText, completed: false, id: Math.random() * 1000}]);
         setInputText("");
     };
 
