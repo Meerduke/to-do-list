@@ -6,12 +6,24 @@ export default function Todo ({text, todo, todos, setTodos}){
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
 
+    function completeHandler(){
+        setTodos(todos.map((item) => {
+            if(item.id === todo.id){
+                return{
+                    ...item, completed: !item.completed
+                }
+            }
+            return item;
+        })
+        );
+    };
+
     return(
         <div className="todo">
-            <li className="todo-item">
+            <li className={`todo-item ${todo.completed ? "completed" : ''}`}>
                 {text}
             </li>
-            <button className="complete-btn">
+            <button onclick={completeHandler} className="complete-btn">
                 <i className="fas fa-check-square"></i>
             </button>
             <button onClick={deleteHandler} className="trash-btn">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form({inputText, setInputText, todos, setTodos}){
+export default function Form({inputText, setInputText, todos, setTodos, setStatus}){
 
     function inputTextHandler(event){
         setInputText(event.target.value);
@@ -12,6 +12,10 @@ export default function Form({inputText, setInputText, todos, setTodos}){
         setInputText("");
     };
 
+    function statusHandler(event){
+        setStatus(event.target.value);
+    }
+
     return(
         <div className = "Form">
             <h2>Form</h2>
@@ -21,7 +25,7 @@ export default function Form({inputText, setInputText, todos, setTodos}){
                     <i className="far fa-calendar-plus"></i>
                 </button>
                 <div className="select">
-                    <select name="todos" className="filter-todo">
+                    <select onChange={statusHandler} name="todos" className="filter-todo">
                         <option value="all">All</option>
                         <option value="completed">Completed</option>
                         <option value="uncompleted">Uncompleted</option>
