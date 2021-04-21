@@ -15,11 +15,7 @@ function App() {
   }, []);
   
   useEffect(() => {
-    filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
-
-  function filterHandler(){
+    function filterHandler(){
     switch(status){
       case "completed":
         setFilteredTodos(todos.filter(todo => todo.completed === true));
@@ -31,11 +27,14 @@ function App() {
         setFilteredTodos(todos);
         break;
     }
-  };
-
+  }
   function saveLocalTodos(){
     localStorage.setItem("todos",JSON.stringify(todos));
   };
+    filterHandler();
+    saveLocalTodos();
+  }, [todos, status]);
+
 
   function getLocalTodos(){
     if(localStorage.getItem("todos") === null){
