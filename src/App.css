@@ -1,0 +1,75 @@
+body {
+  background-image: url("/src/images/lined-paper.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 20px;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style: none;
+}
+
+form input {
+  height: 35px;
+  margin-right: 10px;
+}
+
+form button {
+  height: 35px;
+  width: 55px;
+  background-color: #536162 !important;
+  border: 1px solid #536162 !important;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+form select {
+  height: 35px;
+  margin: 10px 0 0 10px;
+  width: 130px;
+}
+
+.App {
+  border: 1px solid #536162;
+  border-radius: 2px;
+  display: block;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 700px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #d0e4f5;
+  text-align: center;
+}
+
+.ToDoList {
+  margin: 40px;
+}
+
+.todo {
+  border-radius: 2px;
+  border: 1px solid #536162;
+  margin: 20px auto;
+  padding: 10px 0;
+  max-width: 400px;
+  box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  line-height: 35px;
+}
+
+.todo button {
+  height: 35px;
+  width: 40px;
+  background-color: #536162 !important;
+  border: 1px solid #536162 !important;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

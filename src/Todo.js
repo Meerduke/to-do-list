@@ -19,16 +19,20 @@ export default function Todo ({text, todo, todos, setTodos}){
     };
 
     return(
-        <div className="todo">
-            <li className={`todo-item ${todo.completed ? "completed" : ''}`}>
+        <div className="todo d-flex justify-content-evenly">
+            <div className="col-9">
+            <li maxLength="30" className={`todo-item ${todo.completed ? "completed" : ''}`}>
                 {text}
             </li>
-            <button onClick={completeHandler} className="complete-btn">
+            </div>
+            <div className="col-3">
+            <button onClick={completeHandler} className="complete-btn me-1">
                 <i className="fas fa-check-square"></i>
             </button>
             <button onClick={deleteHandler} className="trash-btn">
                 <i className="fas fa-trash-alt"></i>
             </button>
+            </div>
         </div>
     )
 }

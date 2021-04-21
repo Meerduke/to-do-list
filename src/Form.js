@@ -18,13 +18,15 @@ export default function Form({inputText, setInputText, todos, setTodos, setStatu
 
     return(
         <div className = "Form">
-            <h2>Form</h2>
-            <form>
+            <form className="d-block justify-content-center">
                 <input value={inputText} onChange={inputTextHandler} type="text"/>
                 <button onClick={submitTodoHandler} type="submit" className="btn btn-primary">
-                    <i className="far fa-calendar-plus"></i>
+                    Add
                 </button>
                 <div className="select">
+                    <span>
+                        Filter By:
+                    </span>
                     <select onChange={statusHandler} name="todos" className="filter-todo">
                         <option value="all">All</option>
                         <option value="completed">Completed</option>
