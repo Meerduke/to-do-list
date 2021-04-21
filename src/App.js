@@ -1,6 +1,6 @@
 import Form from './Form';
 import ToDoList from './ToDoList';
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import './App.css';
 
@@ -11,22 +11,40 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   useEffect(() => {
+    getLocalTodos();
+  }, []);
+  
+  useEffect(() => {
     filterHandler();
-  }, [todos]);
+    saveLocalTodos();
+  }, [todos, status]);
 
   function filterHandler(){
     switch(status){
-      case 'completed':
+      case "completed":
         setFilteredTodos(todos.filter(todo => todo.completed === true));
         break;
-        case 'uncompleted':
+      case "uncompleted":
         setFilteredTodos(todos.filter(todo => todo.completed === false));
         break;
-        default:
+      default:
         setFilteredTodos(todos);
         break;
     }
-  }
+  };
+
+  function saveLocalTodos(){
+    localStorage.setItem("todos",JSON.stringify(todos));
+  };
+
+  function getLocalTodos(){
+    if(localStorage.getItem("todos") === null){
+      localStorage.setItem("todos",JSON.stringify([]));
+    }else {
+      let todoLocal = JSON.parse(localStorage.getItem("todos"))
+      setTodos(todoLocal);
+    }
+  };
 
   return (
     <div className="App">

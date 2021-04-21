@@ -23,7 +23,7 @@ export default function Todo ({text, todo, todos, setTodos}){
             <li className={`todo-item ${todo.completed ? "completed" : ''}`}>
                 {text}
             </li>
-            <button onclick={completeHandler} className="complete-btn">
+            <button onClick={completeHandler} className="complete-btn">
                 <i className="fas fa-check-square"></i>
             </button>
             <button onClick={deleteHandler} className="trash-btn">
