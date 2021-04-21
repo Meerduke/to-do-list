@@ -19,19 +19,34 @@ form input {
   margin-right: 10px;
 }
 
-form button {
-  height: 35px;
-  width: 55px;
-  background-color: #536162 !important;
-  border: 1px solid #536162 !important;
-  border-radius: 4px;
-  color: #ffffff;
-}
-
 form select {
   height: 35px;
   margin: 10px 0 0 10px;
   width: 130px;
+}
+
+button {
+  height: 35px;
+  background-color: #536162 !important;
+  border: 1px solid #536162 !important;
+  border-radius: 4px;
+  color: #ffffff;
+  transition: all 200ms ease-in-out;
+}
+
+form button {
+  width: 55px;
+}
+
+.todo button {
+  width: 40px;
+}
+
+button:hover {
+  background-color: #ffffff !important;
+  border: 1px solid #536162 !important;
+  border-radius: 4px;
+  color: #536162 !important;
 }
 
 .App {
@@ -58,15 +73,6 @@ form select {
   max-width: 400px;
   box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.2);
   line-height: 35px;
-}
-
-.todo button {
-  height: 35px;
-  width: 40px;
-  background-color: #536162 !important;
-  border: 1px solid #536162 !important;
-  border-radius: 4px;
-  color: #ffffff;
 }
 
 .completed {
